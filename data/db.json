@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 5200,
+      "checked": true
+    },
+    {
+      "id": "2",
+      "name": "Personal Computer NG",
+      "price": 5400,
+      "checked": true
+    },
+    {
+      "id": "4",
+      "name": "ink",
+      "price": 450,
+      "checked": true
+    },
+    {
+      "id": "5",
+      "name": "camera",
+      "price": 545,
+      "checked": true
+    },
+    {
+      "id": "6",
+      "name": "camera",
+      "price": 670,
+      "checked": true
+    },
+    {
+      "id": "7",
+      "name": "server",
+      "price": 50000,
+      "checked": true
+    },
+    {
+      "id": "a42e",
+      "name": "cutter",
+      "price": 600,
+      "checked": true
+    }
+  ]
+}
