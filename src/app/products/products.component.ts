@@ -42,6 +42,7 @@ currentPage:number = 1;
   } */
   
   getProducts(){
+    this.appState.productsState.keyword=this.keyword
     this.productService.getProducts(this.appState.productsState.keyword,this.appState.productsState.currentPage,this.appState.productsState.pageSize)
     .subscribe({
       next: (resp) => {
@@ -56,6 +57,8 @@ currentPage:number = 1;
             console.log(totalProducts);
             //this.totalPages = Math.floor(totalProducts/this.pageSize)
             this.totalPages = this.appState.productsState.totalPages= resp.pages;
+            
+            console.log(`keyword : ${this.keyword}`);
             console.log(this.appState.productsState.totalPages);
             /*if(totalProducts % this.pageSize != 0){
               this.totalPages = this.totalPages + 1
@@ -96,8 +99,8 @@ searchProducts(){
     this.totalPages = 0;
     this.productService.searchProducts(this.keyword, this.currentPage, this.pageSize)
     .subscribe({
-      next: value=>{
-        this.products=value;
+      next: (value)=>{
+        this.products=value.data;
         console.log(this.keyword)
         console.log(value)
       },
@@ -108,7 +111,8 @@ searchProducts(){
   }
 
   handleGoToPage(page: number) {
-    this.currentPage = page;
+    this.currentPage=this.appState.productsState.currentPage = page;
+    console.log(`current page : ${this.currentPage}`)
     this.getProducts();
     }
 

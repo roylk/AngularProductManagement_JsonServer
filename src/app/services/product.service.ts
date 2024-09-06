@@ -36,7 +36,8 @@ export class ProductService {
       return this.http.post<Product>(`http://localhost:8087/products`, product)
     }
 
- public searchProducts(keyword:string,page:number, size:number):Observable<Array<Product>> {
+ //public searchProducts(keyword:string,page:number, size:number):Observable<Array<Product>> {
+ public searchProducts(keyword:string,page:number, size:number):Observable<any> {
       return this.http.get<Array<Product>>(`http://localhost:8087/products?name=${keyword}&_page=${page}&_per_page=${size}`);
    }
 
